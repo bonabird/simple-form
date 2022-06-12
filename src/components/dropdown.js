@@ -1,8 +1,8 @@
-import { Sentencer } from "../functions/sentencer"
+import { SentenceCaseCreator } from "../functions/sentence"
 
-const Droperiser = (props) => (
+const DropDownCreator = (props) => (
   <div>
-    <label htmlFor={props.name.naid}>{Sentencer(props.name.naid)}</label>
+    <label htmlFor={props.name.naid}>{SentenceCaseCreator(props.name.naid)}</label>
     <div>
       <select
         id={props.name.naid}
@@ -19,8 +19,8 @@ const Droperiser = (props) => (
   </div>
 )
 
-export default Droperiser
+export default DropDownCreator
 
 const Info = ({ item }) => (
-  <option value={item.value}>{Sentencer(item.value)}</option>
+  <option value={item.value}>{SentenceCaseCreator(item.value)}</option>
 )

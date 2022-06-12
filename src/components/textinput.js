@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react"
 import { names } from "../config/config"
-import { Sentencer } from "../functions/sentencer"
-import Droperiser from "./droperiser"
+import { Sentencer } from "../functions/sentence"
+import DropDownCreator from "./dropdown"
 
 const TextInput = () => {
   const [formData, setFormData] = useState(initaliseValues())
@@ -23,16 +23,16 @@ const TextInput = () => {
 
   function InputDivider(name) {
     if (name.type === "drop") {
-      return DropDownCreator(name)
+      return DropDownRef(name)
     } else if (name.type === "text") {
       return TextBoxCreator(name)
     }
   }
 
 
-  const DropDownCreator = (name) => (
+  const DropDownRef = (name) => (
     <div>
-      <Droperiser
+      <DropDownCreator
         key={name.id}
         handleChange={handleChange}
         name={name}

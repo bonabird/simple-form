@@ -1,21 +1,21 @@
 import { names } from "../config/config";
-import { Sentencer } from "../functions/sentencer";
+import { SentenceCaseCreator } from "../functions/sentence";
 
 const Output = (props) => {
     const rows = (JSON.parse(localStorage.getItem("data")))
 
     const titleElements = (names.map(name => (
-        <th key={name.id}>{Sentencer(name.naid)}</th>
+        <th key={name.id}>{SentenceCaseCreator(name.naid)}</th>
     ))
     )
 
     const dataCool = (rows.map(row => (
         <tr>
-            <td>{Sentencer(row.regione)}</td>
-            <td>{Sentencer(row.provincia)}</td>
-            <td>{Sentencer(row.comune)}</td>
-            <td>{Sentencer(row.unita_urbanistica)}</td>
-            <td>{Sentencer(row.valore)}</td>
+            <td>{SentenceCaseCreator(row.regione)}</td>
+            <td>{SentenceCaseCreator(row.provincia)}</td>
+            <td>{SentenceCaseCreator(row.comune)}</td>
+            <td>{SentenceCaseCreator(row.unita_urbanistica)}</td>
+            <td>{SentenceCaseCreator(row.valore)}</td>
         </tr>
     )))
     return (
