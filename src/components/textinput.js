@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react"
 import { names } from "../config/config"
-import { Sentencer } from "../functions/sentence"
+import { SentenceCaseCreator } from "../functions/sentence"
 import DropDownCreator from "./dropdown"
 
 const TextInput = () => {
@@ -66,7 +66,7 @@ const TextInput = () => {
         value={formData[name.naid]}
         onChange={handleChange}
         name={name.naid}
-        placeholder={Sentencer(name.naid)}
+        placeholder={SentenceCaseCreator(name.naid)}
       />
       {formValidation[name.naid] && <p className="invalid">{formValidation[name.naid]}</p>}
     </div>
